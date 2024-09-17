@@ -1,36 +1,12 @@
-import Image from "next/image"
-import heroImg from "../../../public/assets/avatar-02.png"
-import logo from "../../../public/assets/logo.png"
-import zigArrow from "../../../public/assets/zig-arrow.png"
-import { Header, Content, Buttons } from "./style"
-import { FaRegUser } from 'react-icons/fa';
+import Image from "next/image";
+import heroImg from "../../../public/assets/avatar-02.png";
+import zigArrow from "../../../public/assets/zig-arrow.png";
+import { Content, Buttons } from "./style";
+import Link from "next/link";
 
 export default function ContentIndex() {
   return (
     <div className="container">
-      <Header>
-        <nav>
-          <ul>
-            <li>
-              <Image
-                className="img-header"
-                alt="Logo Tarefas"
-                src={logo}
-                priority={true}
-              />
-
-              <h2>Task Verse</h2>
-            </li>
-
-            <li>
-              <a href="">
-                <FaRegUser size={16} />
-                Login
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </Header>
 
       <Content>
         <Image
@@ -44,9 +20,7 @@ export default function ContentIndex() {
           <span>Sistema de organização <br /> de tarefas</span>
         </h1>
 
-
-
-        <Buttons >
+        <Buttons>
           <Image
             className="img-header"
             alt="Logo Tarefas"
@@ -54,15 +28,15 @@ export default function ContentIndex() {
             priority={true}
           />
           <div className="numbers">
-            <a href="">
+            <Link href="">
               +7 Mil postagens
-            </a>
-            <a href="">
+            </Link>
+            <Link href="">
               +1 Mil comentários
-            </a>
+            </Link>
           </div>
         </Buttons>
       </Content>
-    </div >
-  )
+    </div>
+  );
 }
