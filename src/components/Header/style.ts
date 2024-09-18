@@ -52,7 +52,7 @@ nav {
       a, button {        
           display: flex;
           align-items: center;
-          gap: 1.6rem;
+          gap: .8rem;
 
           font-size: 17px;
           font-style: normal;
@@ -72,6 +72,11 @@ nav {
 
           transition: all .2s;
 
+          img {
+            width: 2.4rem;
+            height: 2.4rem;
+          }
+
           svg {
             fill: var(--color-white);
             transition: all .2s;
@@ -88,7 +93,7 @@ nav {
           }
 
           &.my-pannel {
-            padding: .4rem 1rem;
+            padding: .8rem 2rem;
 
             svg {
               stroke: var(--color-white);
