@@ -14,7 +14,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={golosText.className}>
       <SessionProvider session={pageProps.session}>
-        <Header />
+        <div className="container">
+          <Header />
+        </div>
         <GlobalStyle />
         <Component {...pageProps} />
       </SessionProvider>

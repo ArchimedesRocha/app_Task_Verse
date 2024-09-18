@@ -4,13 +4,18 @@ import Link from "next/link"
 
 import { HeaderStyle } from "./style"
 
-import logo from "../../../public/assets/logo.png"
+import logo from "../../../public/assets/logo-gif-06.gif"
 
 import { FaRegUser } from 'react-icons/fa';
 import { LuLayoutDashboard } from "react-icons/lu";
 
+import { useSession, signIn, signOut } from 'next-auth/react'
+
 
 export default function Header() {
+
+  const { data: session, status } = useSession();
+
   return (
     <HeaderStyle>
       <nav>
@@ -32,10 +37,20 @@ export default function Header() {
           </li>
 
           <li>
-            <Link href="">
-              <FaRegUser size={16} />
-              Login
-            </Link>
+            {status === 'loading' ? (
+              <>Carregando...</>
+            ) : session ? (
+              <button onClick={() => signOut()}>
+                <FaRegUser size={16} />
+                Olá {session?.user?.name}
+              </button>
+            ) : (
+              <button onClick={() => signIn()}>
+                <FaRegUser size={16} />
+                Login
+              </button>
+            )
+            }
           </li>
         </ul>
       </nav>

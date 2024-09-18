@@ -1,9 +1,21 @@
-import styled from "styled-components";
 
+import styled, {keyframes} from "styled-components";
+
+const rotate = keyframes`
+
+from {
+  transform: rotate(0);
+}
+
+to {
+  transform: rotate(360deg);
+}
+
+`
 
 export const HeaderStyle = styled.header`
 
-margin: 3.2rem 1.6rem 0 1.6rem;
+margin-top: 3.2rem;
 
 border-radius: border-radius-md;
 border: 2px solid rgba(47, 51, 73, 0.68);
@@ -37,7 +49,7 @@ nav {
         letter-spacing: 0.025rem;
       }
 
-      a {        
+      a, button {        
           display: flex;
           align-items: center;
           gap: 1.6rem;
