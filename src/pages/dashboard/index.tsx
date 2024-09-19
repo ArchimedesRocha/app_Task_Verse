@@ -14,7 +14,16 @@ import girl from "../../../public/assets/avatar-05.png";
 import { Content, RegisterTask, FollowTasks, TextArea, CheckBox, ButtonSecondary, Tasks } from './style'
 import Link from "next/link";
 
-export default function Dashboard() {
+import { db } from '../../services/firebaseConnection';
+import { addDoc, collection } from 'firebase/firestore';
+
+interface HomeProps {
+  user: {
+    email: string;
+  }
+}
+
+export default function Dashboard({ user }: HomeProps) {
 
   const [input, setInput] = useState("");
   const [publicTask, setPublicTask] = useState(false);
@@ -23,12 +32,25 @@ export default function Dashboard() {
     setPublicTask(e.target.checked)
   }
 
-  function handleRegisterTask(e: FormEvent) {
+  async function handleRegisterTask(e: FormEvent) {
     e.preventDefault();
 
     if (input === "") return;
 
-    alert("Teste")
+    try {
+      await addDoc(collection(db, "tarefas"), {
+        tarefa: input,
+        created: new Date(),
+        user: user?.email,
+        public: publicTask
+      })
+
+      setInput("");
+      setPublicTask(false);
+
+    } catch (err) {
+      console.log(err)
+    }
 
   }
 
@@ -113,6 +135,10 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   }
 
   return {
-    props: {},
+    props: {
+      user: {
+        email: session?.user?.email,
+      }
+    },
   };
 };
