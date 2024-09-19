@@ -4,7 +4,7 @@ import Link from "next/link"
 
 import { HeaderStyle } from "./style"
 
-import logo from "../../../public/assets/logo-gif-06.gif"
+import logo from "../../../public/assets/logo.svg"
 
 import { FaRegUser } from 'react-icons/fa';
 import { FaUserAstronaut } from "react-icons/fa";
@@ -46,7 +46,7 @@ export default function Header() {
             ) : session ? (
               <>
                 <button>
-                  <img src={session.user?.image as string} alt="imagem do usuário" />
+                  <FaUserAstronaut size={16} />
                   Olá {session?.user?.name}
                 </button>
                 <button onClick={() => signOut()}>
