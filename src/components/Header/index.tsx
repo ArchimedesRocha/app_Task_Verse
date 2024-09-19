@@ -12,8 +12,6 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { BiArrowToLeft } from "react-icons/bi";
 
 import { useSession, signIn, signOut } from 'next-auth/react'
-
-
 export default function Header() {
 
   const { data: session, status } = useSession();

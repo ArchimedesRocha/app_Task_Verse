@@ -23,6 +23,8 @@ background: rgba(47, 51, 73, 0.38);
 
 padding: 1.3rem 3.2rem;
 
+border-radius: .8rem;
+
 nav {
   ul {
     display: flex;

@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
 // Text Default Collor
 --color-text-default: #18264A;
+--color-text-primary: rgba(225, 222, 245, .7);
 
 /* Color's Pallet Others*/
 --color-white: #ffffff;
@@ -45,7 +46,8 @@ const GlobalStyle = createGlobalStyle`
 --color-blue: #4F88CC;
 
 /* Color's Pallet Purple */
---color-purple-default: #4E229C;
+--color-purple-default: #7367F0;
+--color-purple-100: #bcb6fd;
 --color-purple-transparent-100: rgba(115,103,204, .16);
 
 /* Color's Pallet Green*/
@@ -61,6 +63,8 @@ const GlobalStyle = createGlobalStyle`
 --color-green: #2CAC6B;
 
 /* Color's Pallet Gray*/
+--color-gray-rgba-100:rgba(255,255,255,.1);
+--color-gray-rgba-400:rgba(255,255,255,.4);
 --color-gray-100: #D9D9D9;
 --color-gray-150: #888888;
 --color-gray-175: #676767;
@@ -70,6 +74,7 @@ const GlobalStyle = createGlobalStyle`
 --color-gray-500: #3C3838;
 --color-gray-600: #2B2828;
 --color-gray-700: #1E1E1E;
+
 }
 
 /* CSS Reset */
