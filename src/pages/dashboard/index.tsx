@@ -1,12 +1,12 @@
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState, useEffect } from "react";
 
 import Head from "next/head";
 import Image from "next/image";
 
 import { FaRegTrashAlt } from "react-icons/fa";
-import { PiArrowUUpRightBold } from "react-icons/pi";
+import { LuShare2 } from "react-icons/lu";
 
 
 import girl from "../../../public/assets/avatar-05.png";
@@ -15,7 +15,7 @@ import { Content, RegisterTask, FollowTasks, TextArea, CheckBox, ButtonSecondary
 import Link from "next/link";
 
 import { db } from '../../services/firebaseConnection';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, query, orderBy, where, onSnapshot, doc, deleteDoc } from 'firebase/firestore';
 
 interface HomeProps {
   user: {
@@ -23,10 +23,50 @@ interface HomeProps {
   }
 }
 
+interface TaskProps {
+  id: string;
+  created: Date;
+  public: boolean;
+  tarefa: string;
+  user: string;
+}
+
 export default function Dashboard({ user }: HomeProps) {
 
   const [input, setInput] = useState("");
   const [publicTask, setPublicTask] = useState(false);
+  const [tasks, setTasks] = useState<TaskProps[]>([])
+
+  useEffect(() => {
+    async function loadTarefas() {
+
+      const tarefasRef = collection(db, "tarefas")
+      const q = query(
+        tarefasRef,
+        orderBy("created", "desc"),
+        where("user", "==", user?.email)
+      )
+
+      onSnapshot(q, (data) => {
+        let lista = [] as TaskProps[];
+
+        data.forEach((doc) => {
+          lista.push({
+            id: doc.id,
+            tarefa: doc.data().tarefa,
+            created: doc.data().created,
+            user: doc.data().user,
+            public: doc.data().public
+          })
+        })
+
+        setTasks(lista);
+      });
+
+    }
+
+    loadTarefas()
+  }, [user?.email])
 
   function handleChangePublic(e: ChangeEvent<HTMLInputElement>) {
     setPublicTask(e.target.checked)
@@ -52,6 +92,19 @@ export default function Dashboard({ user }: HomeProps) {
       console.log(err)
     }
 
+  }
+
+  async function handleShare(id: string) {
+    await navigator.clipboard.writeText(
+      `${process.env.NEXT_PUBLIC_URL}/task/${id}`
+    )
+
+    alert('A URL da tarefa foi copiada.')
+  }
+
+  async function handleDeleteTask(id: string) {
+    const docRef = doc(db, "tarefas", id)
+    await deleteDoc(docRef)
   }
 
 
@@ -81,7 +134,7 @@ export default function Dashboard({ user }: HomeProps) {
 
                   <span className="slider round"></span>
                 </CheckBox>
-                <p> Deixar Tarefa pública</p>
+                <p> Deixar tarefa pública?</p>
               </div>
 
               <ButtonSecondary>
@@ -104,19 +157,35 @@ export default function Dashboard({ user }: HomeProps) {
         </FollowTasks>
       </Content>
 
-      <Tasks>
-        <div className="tasks">
-          <Link href="/">Postar projeto no linkedin</Link>
-          <div className="task">
-            <button>
-              <span>Pública </span>
-              <PiArrowUUpRightBold size={16} />
-            </button>
-            <button className="trash">
-              <FaRegTrashAlt size={16} />
-            </button>
+      <Tasks >
+        {tasks.map((item) => (
+          <div className="tasks" key={item.id}>
+            {item.public ? (
+              <Link href={`/task/${item.id}`}>
+                {item.tarefa}
+              </Link>
+            ) : (
+              <p>{item.tarefa}</p>
+            )}
+
+            <div className="task">
+              {item.public && (
+                <div className="publicTask">
+                  <span>Pública </span>
+                  <button onClick={() => handleShare(item.id)}>
+                    <LuShare2 size={16} />
+                  </button>
+                </div>
+              )}
+
+              <button className="trash" onClick={() => handleDeleteTask(item.id)}>
+                <FaRegTrashAlt size={16} />
+              </button>
+
+
+            </div>
           </div>
-        </div>
+        ))}
       </Tasks>
     </div>
   )

@@ -71,8 +71,8 @@ export const TextArea = styled.textarea`
 export const CheckBox = styled.label`
   position: relative;
   display: inline-block;
-  width: 6rem;
-  height: 3.4rem;
+  width: 5rem;
+  height: 2.4rem;
 
   input {
     opacity: 0;
@@ -118,8 +118,8 @@ export const CheckBox = styled.label`
     &:before {
       position: absolute;
       content: "";
-      height: 2.6rem;
-      width: 2.6rem;
+      height: 1.6rem;
+      width: 1.6rem;
       left: 0.4rem;
       bottom: 0.4rem;
       background-color: var(--color-white);
@@ -206,6 +206,10 @@ export const FollowTasks = styled.section`
 `
 
 export const Tasks = styled.div`
+display: flex;
+flex-direction: column;
+gap: 1.6rem;
+
   .tasks {
     display: flex;
     align-items: center;
@@ -215,64 +219,80 @@ export const Tasks = styled.div`
     border-radius: 0.8rem;
     background: var(--color-gray-rgba-100);
 
-    a {        
+    a {
+
       color: var(--color-text-primary);
       line-height: 2.4rem;
       letter-spacing: 0.025rem;
       transition: all .2s;
       white-space: pre-wrap;
 
-      &:hover {
-        color: var(--color-green-625);
+      &:hover {        
+        color: var(--color-green-625); 
       }
+    }
+
+    p {      
+      color: var(--color-text-primary);
+      line-height: 2.4rem;
+      letter-spacing: 0.025rem;
+      transition: all .2s;
+      white-space: pre-wrap;
     }
 
     .task {
       display: flex;
       align-items: center;
-      gap: 3.2rem;
+      gap: 1.6rem;
+
+      .publicTask {
+
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;     
+
+        svg {
+          stroke: var(--color-gray-rgba-400);
+          fill: transparent;
+          transition: all .2s;
+
+          &:hover {
+            stroke: var(--color-purple-default);
+            fill: transparent;
+          }
+        }
+
+        
+      }
 
       button {     
       display: flex;
       align-items: center;
-      gap: .8rem;   
-      
-        span {
-          color: var(--color-purple-default);  
-          transition: all .2s;      
-        }
-        
-        svg {
-            stroke: var(--color-purple-default);
-            fill: var(--color-purple-default);
+      gap: .8rem;  
+
+        &.trash {
+          svg {
+            stroke: var(--color-gray-rgba-400);
+            fill: var(--color-gray-rgba-400);
             transition: all .2s;
           }
+        }
+
+        &:hover {
 
           &.trash {
-            svg {
-              stroke: var(--color-gray-rgba-400);
-              fill: var(--color-gray-rgba-400);
-              transition: all .2s;
-            }
-          }
-
-          &:hover {
-            span {
-              color: var(--color-green-625);
-            }
-            svg {                       
-                stroke: var(--color-green-625);
-                fill: var(--color-green-625);              
-            }
-
-            &.trash {
-              svg {               
-                stroke: var(--color-red-600);
-                fill: var(--color-red-600);             
-              }
+            svg {               
+              stroke: var(--color-red-600);
+              fill: var(--color-red-600);             
             }
           }
         }
+      }
+
+      span {
+        color: var(--color-purple-default);  
+        transition: all .2s;      
+      } 
     }
   }
 `
