@@ -75,7 +75,7 @@ export const Buttons = styled.div`
     justify-content: center;
     gap: 3.2rem;
 
-    a {
+    p {
       font-size: 17px;
       font-style: normal;
       font-weight: 500;
@@ -91,14 +91,6 @@ export const Buttons = styled.div`
       border-radius: .8rem;
 
       box-shadow: 0px 2px 6px 0px rgba(115, 103, 240, 0.30);
-
-      transition: all .2s;
-
-      &:hover {
-        color: var(--color-green-625);
-        background: var(--color-green-100);
-        border: 0.1rem solid var(--color-green-100);
-      }
     }
   }
 `;

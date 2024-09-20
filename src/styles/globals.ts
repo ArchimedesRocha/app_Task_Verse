@@ -75,7 +75,6 @@ const GlobalStyle = createGlobalStyle`
 --color-gray-500: #3C3838;
 --color-gray-600: #2B2828;
 --color-gray-700: #1E1E1E;
-
 }
 
 /* CSS Reset */
@@ -115,7 +114,6 @@ html {
 
 /* CSS ScrollBar Preset */
 body {
-
   &::-webkit-scrollbar {
     width: 1rem;
     background-color: var(--color-white);

@@ -21,12 +21,21 @@ export const RegisterComment = styled.section`
     gap: 3.2rem;
     padding: 0;
 
-    h1 {
-      color: var(--color-text-primary);
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 2.4rem;
-      letter-spacing: 0.025rem;
+    .title {      
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      h1 {
+        color: var(--color-text-primary)
+      }
+
+      h2 {
+        color: var(--color-text-primary);
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.4rem;
+        letter-spacing: 0.025rem;
+      }
     }
 
     form {      
@@ -65,6 +74,17 @@ export const TextArea = styled.textarea`
 
   &::placeholder {
     color: var(--color-gray-rgba-400);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--color-gray-700);
+    background: var(--color-gray-rgba-100);
+    border: 0.1rem solid var(--color-gray-700);
+
+    &::placeholder {
+    color: var(--color-gray-700);
+  }
   }
 `
 
@@ -159,7 +179,14 @@ export const ButtonSecondary = styled.button.attrs(props => ({
     color: var(--color-purple-default);
     background: var(--color-purple-100);
     border: 0.1rem solid var(--color-purple-default);
-  }      
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--color-gray-700);
+    background: var(--color-gray-rgba-100);
+    border: 0.1rem solid var(--color-gray-700);
+  }
 `
 
 export const FollowComments = styled.section`
@@ -212,39 +239,58 @@ gap: 1.6rem;
 
   .mainComments {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
+    gap: 1.6rem;
 
-    padding: 1.6rem;
-    border-radius: 0.8rem;
-    background: var(--color-gray-rgba-100);
+    p {      
+      color: var(--color-text-primary);
+      font-size: 1.6rem;
+    }
 
     .comments {
+      width: 100%;
+
       display: flex;
-      flex-direction: column;
-      gap: .4rem;
-      .author {
+      align-items: center;
+      justify-content: space-between;
+      
+      padding: 1.6rem;
+      border-radius: 0.8rem;
+      background: var(--color-gray-rgba-100);
+      
+      .message {
         display: flex;
-        align-items: center;
+        flex-direction: column;
         gap: .8rem;
+        .author {
+          display: flex;
+          align-items: center;
+          gap: .8rem;
 
-        p {      
-          color: var(--color-text-primary);
-          font-size: 1.6rem;
+          p {
+            text-transform: uppercase;
+            color: var(--color-text-primary);
+            font-size: 1.4rem;
+          }
+
+          svg {
+            stroke: var(--color-text-primary);
+            fill: var(--color-text-primary);
+          }
         }
 
-        svg {
-          stroke: var(--color-text-primary);
-          fill: var(--color-text-primary);
-        }
-      }
-
-      .comment {
-        span {
-          color: var(--color-text-primary);
-          font-size: 1.4rem;
-          white-space: pre-wrap;
-          padding-left: 2.4rem;
+        .comment {
+          p {
+            color: var(--color-white);
+            font-size: 1.4rem;
+            white-space: pre-wrap;
+          }
+          span {            
+            font-size: 1.2rem;
+            color: var(--color-gray-rgba-400);
+          }
         }
       }
     }
@@ -254,24 +300,35 @@ gap: 1.6rem;
     align-items: center;
     gap: .8rem;  
 
-      &.trash {
+      &.trashIcon {
         svg {
           stroke: var(--color-gray-rgba-400);
           fill: var(--color-gray-rgba-400);
           transition: all .2s;
         }
+        &:disabled {
+          svg {
+            cursor: not-allowed;
+            stroke: var(--color-gray-700);
+            fill: var(--color-gray-700);
+          }
+        }
       }
 
       &:hover {
-
-        &.trash {
-          svg {               
+        &.trashIcon {
+          svg {
             stroke: var(--color-red-600);
             fill: var(--color-red-600);             
+          }          
+          &:disabled {          
+            svg {
+              stroke: var(--color-gray-700);
+              fill: var(--color-gray-700);
+            }
           }
         }
       }
     }
-    
   }
 `

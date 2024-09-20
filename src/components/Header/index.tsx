@@ -22,10 +22,11 @@ export default function Header() {
         <ul>
           <li>
             <Image
+              loading="lazy"
               className="img-header"
               alt="Logo Tarefas"
               src={logo}
-              priority={true}
+
             />
 
             <h2>Task Verse</h2>

@@ -149,9 +149,10 @@ export default function Dashboard({ user }: HomeProps) {
             <h2>Minhas Tarefas</h2>
 
             <Image
+              loading="lazy"
               alt="Girld with notebook"
               src={girl}
-              priority={true}
+
             />
           </div>
         </FollowTasks>
