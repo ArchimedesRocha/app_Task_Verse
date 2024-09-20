@@ -96,7 +96,10 @@ export const LoginButton = styled.button`
 `;
 
 export const ErrorMessage = styled.div`
-  color: red;
-  font-size: 14px;
-  margin-top: 10px;
+  h2 {
+    color: red;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 3.2rem;
+  }
 `;

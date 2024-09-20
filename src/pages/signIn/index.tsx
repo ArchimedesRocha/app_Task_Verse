@@ -1,51 +1,55 @@
-import { getProviders, signIn } from "next-auth/react";
-
-import { Container, LoginAvatar, LoginBox, Title, LoginButton, ErrorMessage } from "./style";
-
-import Image from "next/image"
-
-import logo from "../../../public/assets/logo-black.svg"
-import avatarLogin from "../../../public/assets/avatar-login.png"
-import logoGoogle from '../../../public/assets/logo-google.svg'
+import { useEffect, useState } from "react";
+import { getProviders, signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+import { Container, LoginAvatar, LoginBox, Title, LoginButton } from "./style";
+import Image from "next/image";
+import logo from "../../../public/assets/logo-black.svg";
+import avatarLogin from "../../../public/assets/avatar-login.png";
+import logoGoogle from '../../../public/assets/logo-google.svg';
 
 export default function SignIn({ provider }: any) {
+  const router = useRouter();
+  const { data: session } = useSession();
+  const [loggingIn, setLoggingIn] = useState(false);
+
+  useEffect(() => {
+    if (session) {
+      router.push('/dashboard');
+    }
+  }, [session, router]);
+
+  const handleSignIn = async () => {
+    setLoggingIn(true);
+    const result = await signIn(provider.id, { redirect: false });
+
+    if (result?.error) {
+      setLoggingIn(false);
+    }
+  };
+
   return (
     <Container>
       <LoginAvatar>
         <div className="logo">
-          <Image
-            className="img-header"
-            alt="Logo Tarefas"
-            src={logo}
-            priority={true}
-          />
-
+          <Image className="img-header" alt="Logo Tarefas" src={logo} priority={true} />
           <h2>Task Verse</h2>
         </div>
-
         <div className="avatar">
-          <Image
-            className="img-header"
-            alt="Logo Tarefas"
-            src={avatarLogin}
-            priority={true}
-          />
+          <Image className="img-header" alt="Logo Tarefas" src={avatarLogin} priority={true} />
         </div>
       </LoginAvatar>
       <LoginBox>
         <div className="box">
           <Title>Faça login na sua conta</Title>
           {provider ? (
-            <LoginButton onClick={() => signIn(provider.id)}>
-              <Image
-                className="img-header"
-                alt="Logo Google"
-                src={logoGoogle}
-                priority={true}
-              /> Entrar com {provider.name}
+            <LoginButton onClick={handleSignIn} disabled={loggingIn}>
+              <Image className="img-header" alt="Logo Google" src={logoGoogle} priority={true} />
+              {loggingIn ? "Acessando..." : `Entrar com ${provider.name}`}
             </LoginButton>
           ) : (
-            <ErrorMessage>Provedor de autenticação não encontrado.</ErrorMessage>
+            <LoginButton onClick={() => console.error("Ops... infelizmente ocorreu algum erro!")}>
+              <h2>Ops... infelizmente ocorreu algum erro!</h2>
+            </LoginButton>
           )}
         </div>
       </LoginBox>
