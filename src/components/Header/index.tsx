@@ -33,14 +33,14 @@ export default function Header() {
             {session?.user && (
               <Link href="/dashboard" className='my-pannel'>
                 <LuLayoutDashboard size={16} />
-                Meu Painel
+                Minhas Tarefas
               </Link>
             )}
           </li>
 
           <li>
             {status === 'loading' ? (
-              <>Carregando...</>
+              <span>Carregando...</span>
             ) : session ? (
               <>
                 <button>

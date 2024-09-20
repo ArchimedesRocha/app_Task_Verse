@@ -50,6 +50,10 @@ nav {
         letter-spacing: 0.025rem;
       }
 
+      span {
+        color: var(--color-white);
+      }
+
       a, button {        
           display: flex;
           align-items: center;
