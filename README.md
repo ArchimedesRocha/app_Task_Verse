@@ -1,8 +1,8 @@
 ### Banner do projeto ORIGINAL
 
-![Home Original](https://raw.githubusercontent.com/SeuUsuario/task-verse/main/public/old-home.png)
-![Painel Original](https://raw.githubusercontent.com/SeuUsuario/task-verse/main/public/old-painel.png)
-![Comentários Originais](https://raw.githubusercontent.com/SeuUsuario/task-verse/main/public/old-comments.png)
+![Home Original](https://raw.githubusercontent.com/ArchimedesRocha/task-verse/main/public/old-home.png)
+![Painel Original](https://raw.githubusercontent.com/ArchimedesRocha/task-verse/main/public/old-painel.png)
+![Comentários Originais](https://raw.githubusercontent.com/ArchimedesRocha/task-verse/main/public/old-comments.png)
 
 ### Banner do projeto  COM MEU REDESIGN
 
