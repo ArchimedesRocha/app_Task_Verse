@@ -75,3 +75,5 @@ $ npm install
 $ npm run dev
 
 # O servidor iniciará na porta:3000 - acesse <http://localhost:3000>
+
+# Agora acesse seu firebase e configure no seu .env as suas variáveis de ambiente.
