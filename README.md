@@ -42,7 +42,7 @@ Este projeto é uma aplicação web desenvolvida em Next.js que permite ao usuá
 - [x] Autenticação de usuários com NextAuth
 - [x] Criação e gerenciamento de tarefas
 - [x] Comentários em tarefas
-- [x] Estilização responsiva com styled-components
+- [x] Estilização com styled-components
 - [x] Integração com Firebase para armazenamento de dados
 
 ### Pré-requisitos
