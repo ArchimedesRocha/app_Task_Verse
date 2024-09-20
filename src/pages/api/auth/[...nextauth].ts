@@ -10,6 +10,9 @@ export const authOptions = {
   ],
 
   secret: process.env.JWT_SECRET as string,
+  pages: {
+    signIn: "/signIn"
+  }
 }
 
 export default NextAuth(authOptions)

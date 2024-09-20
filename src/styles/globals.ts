@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
 --color-red: #FF0000;
 
 /* Color's Pallet Blue*/
+--color-blue-rgba-1000:rgba(37,41,60, 1);
 --color-blue-100: #F6FFFF;
 --color-blue-200: #DEFDFD;
 --color-blue-300: #ADE8F0;
@@ -38,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
 --color-blue-450: #00C2FF;
 --color-blue-500: #00A3FF;
 --color-blue-600: #4F88CC;
---color-blke-625: #6D71B3;
+--color-blue-625: #6D71B3;
 --color-blue-650: #161d47;
 --color-blue-675: #18264A;
 --color-blue-680: #2F3349;

@@ -46,7 +46,6 @@ nav {
         color: var(--color-white);
 
         font-size: 2.2rem;
-        font-weight: 700;
         line-height: 2.4rem; /* 109.091% */
         letter-spacing: 0.025rem;
       }
