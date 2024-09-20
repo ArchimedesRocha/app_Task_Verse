@@ -1,13 +1,19 @@
-### Banner do projeto ORIGINAL
-
+### Page Home
 <img src="./public/old-home.png">
+
+### Page Home Redesign
+<img src="./public/new-home.png">
+
+### Page Painel 
 <img src="./public/old-painel.png">
+
+### Page Painel Redesign
+<img src="./public/new-painel.png">
+
+### Page Comentários 
 <img src="./public/old-comments.png">
 
-### Banner do projeto  COM MEU REDESIGN
-
-<img src="./public/new-home.png">
-<img src="./public/new-painel.png">
+### Page Comentários Redesign
 <img src="./public/new-comments.png">
 
 ### Shortcuts
