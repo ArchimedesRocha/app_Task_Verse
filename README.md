@@ -1,14 +1,14 @@
 ### Banner do projeto ORIGINAL
 
-![Home Original](public/old-home.png)
-![Painel Original](public/old-painel.png)
-![Comentários Originais](public/old-comments.png)
+<img src="./public/old-home.png">
+<img src="./public/old-painel.png">
+<img src="./public/old-comments.png">
 
-### Banner do projeto COM MEU REDESIGN
+### Banner do projeto  COM MEU REDESIGN
 
-![Home Redesign](public/new-home.png)
-![Painel Redesign](public/new-painel.png)
-![Comentários Redesign](public/new-comments.png)
+<img src="./public/new-home.png">
+<img src="./public/new-painel.png">
+<img src="./public/new-comments.png">
 
 ### Shortcuts
 
@@ -34,7 +34,7 @@ Este projeto é uma aplicação web desenvolvida em Next.js que permite ao usuá
 ### Status do Projeto
 
 <h4 align="left"> 
-	🚧 Task Verse 🚀 Em Desenvolvimento 🚧
+	🚧 Task Verse 🚀 Concluído 🚧
 </h4>
 
 ### Features
