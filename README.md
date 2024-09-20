@@ -1,40 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Banner do projeto ORIGINAL
 
-## Getting Started
+<img src="./public/github/old-home.png">
+<img src="./public/github/old-painel.png">
+<img src="./public/github/old-comments.png">
 
-First, run the development server:
+### Banner do projeto  COM MEU REDESIGN
+
+<img src="./public/github/new-home.png">
+<img src="./public/github/new-painel.png">
+<img src="./public/github/new-comments.png">
+
+### Shortcuts
+
+<p align="left">
+ <a href="#título-do-projeto">Título do Projeto</a> •
+ <a href="#resumo">Resumo</a> • 
+ <a href="#status-do-projeto">Status do Projeto</a> • 
+ <a href="#features">Features</a> • 
+ <a href="#pré-requisitos">Pré-requisitos</a> • 
+ <a href="#rodando-o-projeto">Rodando o Projeto</a> • 
+ <a href="#autor">Autor</a> • 
+ <a href="#mit-license">Licença</a>
+</p>
+
+### Título do Projeto
+
+Task Verse
+
+### Resumo
+
+Este projeto é uma aplicação web desenvolvida em Next.js que permite ao usuário gerenciar suas tarefas de forma prática e organizada. A aplicação oferece funcionalidades como autenticação de usuários, criação, edição e exclusão de tarefas, bem como a possibilidade de adicionar comentários e visualizar detalhes de cada tarefa. Durante o desenvolvimento, foram aplicados conceitos como componentização, gerenciamento de estado com hooks, integração com a API do Firebase e estilização com styled-components.
+
+### Status do Projeto
+
+<h4 align="left"> 
+	🚧 Task Verse 🚀 Em Desenvolvimento 🚧
+</h4>
+
+### Features
+
+- [x] Autenticação de usuários com NextAuth
+- [x] Criação e gerenciamento de tarefas
+- [x] Comentários em tarefas
+- [x] Estilização responsiva com styled-components
+- [x] Integração com Firebase para armazenamento de dados
+
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: 
+- [Git](https://git-scm.com) 
+- [Node.js](https://nodejs.org/en/)
+
+Além disso, é bom ter um editor para trabalhar com o código, como o [VSCode](https://code.visualstudio.com/).
+
+### Rodando o Projeto
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Clone este repositório
+$ git clone <https://github.com/SeuUsuario/task-verse>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Acesse a pasta do projeto no terminal/cmd
+$ cd task-verse
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+# Instale as dependências
+$ npm install
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# O servidor iniciará na porta:3000 - acesse <http://localhost:3000>
