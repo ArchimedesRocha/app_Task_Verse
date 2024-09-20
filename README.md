@@ -1,14 +1,14 @@
 ### Banner do projeto ORIGINAL
 
-<img src="./public/assets/github/old-home.png">
-<img src="./public/assets/github/old-painel.png">
-<img src="./public/assets/github/old-comments.png">
+<img src="./public/old-home.png">
+<img src="./public/old-painel.png">
+<img src="./public/old-comments.png">
 
 ### Banner do projeto  COM MEU REDESIGN
 
-<img src="./public/assets/github/new-home.png">
-<img src="./public/assets/github/new-painel.png">
-<img src="./public/assets/github/new-comments.png">
+<img src="./public/new-home.png">
+<img src="./public/new-painel.png">
+<img src="./public/new-comments.png">
 
 ### Shortcuts
 
